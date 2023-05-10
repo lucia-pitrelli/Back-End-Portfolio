@@ -11,7 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-/*las tablas se ponen como titutlo en plural*/
+/*las tablas se ponen como titulo en plural*/
 
 
 @Entity
@@ -28,10 +28,10 @@ public class Project {
     @Column(length=55, nullable = false, unique = true)
     private String details;
     
-    
+    @Column
     private int date;
 
-    /*constructor JPA NO LO USA*/
+   
     public Project(Long id, String name, String details, int date) {
         this.id = id;
         this.name = name;
