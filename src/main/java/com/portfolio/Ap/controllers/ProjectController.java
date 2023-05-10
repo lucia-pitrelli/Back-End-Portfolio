@@ -19,12 +19,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProjectController {
     
     @GetMapping
-    public String pruebaProjects(){
-        return "Peticion Get a Projects";
+    public String getListProjects(){
+        return "Peticion Get the Projects";
     }    
     
     @GetMapping("/{id}")
-    public String pruebaProject(@PathVariable Long id){
+    public String getProject(@PathVariable Long id){
         return "Peticion Get a Project number:" + id;
     }
     
@@ -34,12 +34,12 @@ public class ProjectController {
     }  
     
     @PutMapping("/{id}")
-        public String modificaProject(@PathVariable Long id){
+        public String changeProject(@PathVariable Long id){
         return "Peticion Put a Project number:" + id;
     }
     
     @DeleteMapping("/{id}")
     public String deleteProject(@PathVariable Long id){
-        return "Queres eliminar a Project number:" + id;
+        return "Do you want to delete a Project number:" + id;
     }
 }

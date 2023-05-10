@@ -35,7 +35,7 @@ public class EducationController {
     }  
     
     @PutMapping("/{id}")
-        public String modificaEducation(@PathVariable Long id){
+        public String changeEducation(@PathVariable Long id){
         return "Petition Put an Education number:" + id;
     }
     

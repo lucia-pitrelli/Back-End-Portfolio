@@ -11,35 +11,37 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-/*las tablas se ponen como titulo en plural*/
-
 
 @Entity
-@Table(name = "projects")
-public class Project {
+@Table(name = "educations")
+public class Education {
+
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    @Column(length=45, nullable = false)
-    private String name;
+    @Column(length=50, nullable = false)
+    private String institution;
     
-    @Column(length=55, nullable = false, unique = true)
-    private String details;
+    @Column(length=50, nullable = false, unique = true)
+    private String degree;
     
     @Column(nullable = false)
     private int date;
+    
+    /*constructor*/
 
-   
-    public Project(Long id, String name, String details, int date) {
+    public Education(Long id, String institution, String degree, int date) {
         this.id = id;
-        this.name = name;
-        this.details = details;
+        this.institution = institution;
+        this.degree = degree;
         this.date = date;
     }
+
     
-    /*setter and getter*/
+    
+        /*setter and getter*/
     public Long getId() {
         return id;
     }
@@ -48,20 +50,20 @@ public class Project {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getInstitution() {
+        return institution;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setInstitution(String institution) {
+        this.institution = institution;
     }
 
-    public String getDetails() {
-        return details;
+    public String getDegree() {
+        return degree;
     }
 
-    public void setDetails(String details) {
-        this.details = details;
+    public void setDegree(String degree) {
+        this.degree = degree;
     }
 
     public int getDate() {
@@ -72,3 +74,4 @@ public class Project {
         this.date = date;
     }
 }
+
