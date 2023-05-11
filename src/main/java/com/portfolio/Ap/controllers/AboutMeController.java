@@ -11,24 +11,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/softskills")
-public class SoftSkillController {
-    
+@RequestMapping("/api/abouts")
+public class AboutMeController {
+   
     /*tengo una sola id*/
     @GetMapping
-    public String getSoftSkills(){
-        return "Petition Get a list of Soft Skills";
+    public String getAbouts(){
+        return "Petition Get a list of Abouts";
     }    
     
     @GetMapping("/{id}")
-    public String getSoftSkill(@PathVariable Long id){
-        return "Petition Get a Soft Skill number:" + id;
+    public String getAbout(@PathVariable Long id){
+        return "Petition Get an About Me number:" + id;
     }
      
     
     @PutMapping("/{id}")
-    public String changeSoftSkill(@PathVariable Long id){
-        return "Petition Put a Soft Skills number:" + id;
+        public String changeAbout(@PathVariable Long id){
+        return "Petition Put an About me number:" + id;
     }
-    
 }

@@ -12,8 +12,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "presentations")
-public class Presentation {
+@Table(name = "abouts")
+public class AboutMe {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -24,14 +25,13 @@ public class Presentation {
     @Column(nullable = false)
     private String image; 
 
-    
     /*constructor*/
-    public Presentation(Long id, String text, String image) {
+    public AboutMe(Long id, String text, String image) {
         this.id = id;
         this.text = text;
-         this.image = image;
+        this.image = image;
     }
-
+    
     
     /*getter and setter*/
     public Long getId() {
@@ -57,7 +57,6 @@ public class Presentation {
     public void setImage(String image) {
         this.image = image;
     }
-    
     
     
 }

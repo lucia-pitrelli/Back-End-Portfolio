@@ -16,7 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/hardskills")
 public class HardSkillController {
-         @GetMapping
+    
+    @GetMapping
     public String getHardSkills(){
         return "Petition Get a list of Hard Skills";
     }    
