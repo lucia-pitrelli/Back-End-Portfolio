@@ -12,9 +12,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "softskills")
-public class SoftSkill {
-   @Id
+@Table(name = "presentations")
+public class Presentation {
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
@@ -23,11 +23,11 @@ public class SoftSkill {
 
     
     /*constructor*/
-
-    public SoftSkill(Long id, String text) {
+    public Presentation(Long id, String text) {
         this.id = id;
         this.text = text;
     }
+
     
     
     /*getter and setter*/
@@ -46,6 +46,7 @@ public class SoftSkill {
     public void setText(String text) {
         this.text = text;
     }
+    
     
     
 }
