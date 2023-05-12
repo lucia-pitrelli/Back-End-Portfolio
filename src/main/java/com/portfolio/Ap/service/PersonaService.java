@@ -11,14 +11,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/*Tiene la implementacion de todos los metodos que se declara en la interfaz Ipersona
- */
+/*Tiene la implementacion de todos los metodos que se declara en la interfaz Ipersona*/
 
 @Service
 @Transactional
 public class PersonaService implements IPersonaService{
 
-    /*intermediario de base de datos con el repositorio, se inyecta con la anotacion autowired*/
+  /*intermediario de base de datos con el repositorio, se inyecta con la anotacion autowired*/
     
     @Autowired
     public PersonaRepository persoRepo;

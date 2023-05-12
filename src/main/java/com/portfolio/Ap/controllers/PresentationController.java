@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class PresentationController {
     
         /*tengo una sola id*/
+     @GetMapping
        public String getPresentations(){
         return "Petition Get a list of presentation";
     }    

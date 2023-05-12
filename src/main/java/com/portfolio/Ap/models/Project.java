@@ -25,18 +25,22 @@ public class Project {
     @Column(length=45, nullable = false)
     private String name;
     
-    @Column(length=55, nullable = false, unique = true)
+    @Column(length=55, nullable = false)
     private String details;
     
     @Column(nullable = false)
     private int date;
+    
+    @Column(nullable = false)
+    private String image;
 
-   
-    public Project(Long id, String name, String details, int date) {
+   /*constructor*/
+    public Project(Long id, String name, String details, int date, String image) {
         this.id = id;
         this.name = name;
         this.details = details;
         this.date = date;
+        this.image = image;
     }
     
     /*setter and getter*/
@@ -71,4 +75,13 @@ public class Project {
     public void setDate(int date) {
         this.date = date;
     }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+    
 }

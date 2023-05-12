@@ -16,7 +16,6 @@ import jakarta.persistence.Table;
 @Table(name = "educations")
 public class Education {
 
-    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -24,14 +23,13 @@ public class Education {
     @Column(length=50, nullable = false)
     private String institution;
     
-    @Column(length=50, nullable = false, unique = true)
+    @Column(length=50, nullable = false)
     private String degree;
     
     @Column(nullable = false)
     private int date;
     
     /*constructor*/
-
     public Education(Long id, String institution, String degree, int date) {
         this.id = id;
         this.institution = institution;
@@ -40,8 +38,7 @@ public class Education {
     }
 
     
-    
-        /*setter and getter*/
+    /*setter and getter*/
     public Long getId() {
         return id;
     }
