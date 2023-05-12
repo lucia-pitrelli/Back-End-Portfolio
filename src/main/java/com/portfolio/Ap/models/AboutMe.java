@@ -22,14 +22,11 @@ public class AboutMe {
     @Column(length=200, nullable = false)
     private String text; 
 
-    @Column(nullable = false)
-    private String image; 
 
     /*constructor*/
-    public AboutMe(Long id, String text, String image) {
+    public AboutMe(Long id, String text) {
         this.id = id;
         this.text = text;
-        this.image = image;
     }
     
     
@@ -49,14 +46,5 @@ public class AboutMe {
     public void setText(String text) {
         this.text = text;
     }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-    
     
 }

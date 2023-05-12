@@ -22,4 +22,5 @@ public interface IPersonaService {
     /*create one persona*/
     public void createPersona(Persona per);
     
+    /*falta update*/
 }
