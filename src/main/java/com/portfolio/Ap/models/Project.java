@@ -22,7 +22,7 @@ public class Project {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    @Column(length=45, nullable = false)
+    @Column(length=45, nullable = false, unique = true)
     private String name;
     
     @Column(length=55, nullable = false)

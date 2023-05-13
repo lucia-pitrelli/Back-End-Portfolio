@@ -34,12 +34,24 @@ public class PersonaService implements IPersonaService{
        return persoRepo.findById(id).orElse(null);
     }
     
-    /*crear una persona VER UPDATE*/
+    /*crear una persona NO VA - ALTA*/
 
     @Override
     public void createPersona(Persona per) {
       persoRepo.save(per);
     }
     
+    /*delete one persona NO VA*/
+    @Override
+    public void deletePersona(Long id) {
+        persoRepo.deleteById(id);
+    }
+    
+    
      /*falta update*/
+
+
+    
+    
+    
 }

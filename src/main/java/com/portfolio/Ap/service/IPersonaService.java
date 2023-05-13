@@ -19,8 +19,14 @@ public interface IPersonaService {
     /*get one persona*/
     public Persona getPersona(Long id);
     
-    /*create one persona*/
+    /*create one persona NO VA*/
     public void createPersona(Persona per);
+    
+    
+    /*delete one persona NO VA*/
+    
+    public void deletePersona(Long id);
+    
     
     /*falta update*/
 }

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 
 /*interface repositorio que utiliza JPA para metodos create...*/
+/*se coloca la clase persona y el long que proviene del id*/
 @Repository
 public interface PersonaRepository  extends JpaRepository<Persona, Long>{
     

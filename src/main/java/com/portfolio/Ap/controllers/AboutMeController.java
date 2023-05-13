@@ -4,6 +4,7 @@
  */
 package com.portfolio.Ap.controllers;
 
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -12,8 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/abouts")
+
+/*@CrossOrigin(origins = "http://localhost:4200")*/
 public class AboutMeController {
    
+    
+
     /*tengo una sola id*/
     @GetMapping
     public String getAbouts(){
