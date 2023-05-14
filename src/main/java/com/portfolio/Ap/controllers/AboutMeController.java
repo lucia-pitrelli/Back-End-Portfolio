@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/abouts")
 
-/*@CrossOrigin(origins = "http://localhost:4200")*/
+
 public class AboutMeController {
    
     

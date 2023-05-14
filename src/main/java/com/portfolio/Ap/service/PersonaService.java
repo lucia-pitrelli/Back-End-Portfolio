@@ -6,7 +6,7 @@ package com.portfolio.Ap.service;
 
 import com.portfolio.Ap.models.Persona;
 import com.portfolio.Ap.repository.PersonaRepository;
-import jakarta.transaction.Transactional;
+
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 /*Tiene la implementacion de todos los metodos que se declara en la interfaz Ipersona*/
 
 @Service
-@Transactional
 public class PersonaService implements IPersonaService{
 
   /*intermediario de base de datos con el repositorio, se inyecta con la anotacion autowired*/
@@ -34,24 +33,25 @@ public class PersonaService implements IPersonaService{
        return persoRepo.findById(id).orElse(null);
     }
     
-    /*crear una persona NO VA - ALTA*/
+    /*update persona*/
+    @Override
+    public void editPersona(Persona per) {
+      persoRepo.save(per);
+    }
+    
+    
+    /*crear una persona NO VA - ALTA
 
     @Override
     public void createPersona(Persona per) {
       persoRepo.save(per);
     }
     
-    /*delete one persona NO VA*/
+    /*delete one persona NO VA
     @Override
     public void deletePersona(Long id) {
         persoRepo.deleteById(id);
-    }
-    
-    
-     /*falta update*/
-
-
-    
-    
+    }*/
+        
     
 }

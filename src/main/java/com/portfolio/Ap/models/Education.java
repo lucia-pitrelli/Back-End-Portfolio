@@ -20,14 +20,19 @@ public class Education {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    @Column(length=50, nullable = false)
+    @Column(length=50)
     private String institution;
     
-    @Column(length=50, nullable = false)
+    @Column(length=50)
     private String degree;
     
-    @Column(nullable = false)
+    @Column
     private int date;
+    
+    
+    /*defualt constructor*/
+    public Education() { 
+    }
     
     /*constructor*/
     public Education(Long id, String institution, String degree, int date) {

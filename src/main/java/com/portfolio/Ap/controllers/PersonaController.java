@@ -4,34 +4,46 @@
  */
 package com.portfolio.Ap.controllers;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
+
+import com.portfolio.Ap.models.Persona;
+import com.portfolio.Ap.service.IPersonaService;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
+
 @RequestMapping("/api/personas")
 public class PersonaController {
     
-    @CrossOrigin(origins = "http://localhost:4200")
+    @Autowired
+    private IPersonaService persoServ;
 
-  /*tengo una sola id*/
+  /*List of persona users*/
     @GetMapping
-    public String getPersonas(){
-        return "Petition Get a list of Personas";
+    public List<Persona> getPersonas(){
+        return persoServ.getPersonas();
     }    
     
+    /*one persona user*/
     @GetMapping("/{id}")
     public String getPersona(@PathVariable Long id){
         return "Petition Get a Persona number:" + id;
     }
     
-    @PutMapping("/{id}")
-    public String changePersona(@PathVariable Long id){
-        return "Petition Put a Persona number:" + id;
+    /*update persona*/
+    @PutMapping
+    public ResponseEntity<List<Persona>> editPersona(@RequestBody Persona per){
+        persoServ.editPersona(per);
+         return new ResponseEntity(HttpStatus.OK);
     }
      
 }
