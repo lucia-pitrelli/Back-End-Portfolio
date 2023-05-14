@@ -29,7 +29,7 @@ public class PersonaService implements IPersonaService{
 
     /*buscar una persona*/
     @Override
-    public Persona getPersona(Long id) {
+    public Persona getPersonaById(Long id) {
        return persoRepo.findById(id).orElse(null);
     }
     
@@ -38,20 +38,5 @@ public class PersonaService implements IPersonaService{
     public void editPersona(Persona per) {
       persoRepo.save(per);
     }
-    
-    
-    /*crear una persona NO VA - ALTA
-
-    @Override
-    public void createPersona(Persona per) {
-      persoRepo.save(per);
-    }
-    
-    /*delete one persona NO VA
-    @Override
-    public void deletePersona(Long id) {
-        persoRepo.deleteById(id);
-    }*/
-        
     
 }

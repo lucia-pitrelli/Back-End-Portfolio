@@ -14,7 +14,7 @@ public interface IEducationService {
     public List<Education> getEducations();
     
     /*get one Education*/
-    public Education getEducation(Long id);
+    public Education getEducationById(Long id);
         
     /*update Education*/
     public void editEducation(Education edu);

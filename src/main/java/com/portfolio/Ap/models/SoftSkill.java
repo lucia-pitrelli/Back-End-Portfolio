@@ -19,9 +19,13 @@ public class SoftSkill {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    @Column(length=200, nullable = false)
+    @Column(length=200)
     private String text; 
 
+    
+    /*constructor default*/
+     public SoftSkill() {
+    }
     
     /*constructor*/
      public SoftSkill(Long id, String text) {

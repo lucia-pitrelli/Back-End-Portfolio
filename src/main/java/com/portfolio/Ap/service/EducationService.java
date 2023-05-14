@@ -22,7 +22,7 @@ public class EducationService implements IEducationService{
     }
 
     @Override
-    public Education getEducation(Long id) {
+    public Education getEducationById(Long id) {
         return eduRepo.findById(id).orElse(null);
     }
 

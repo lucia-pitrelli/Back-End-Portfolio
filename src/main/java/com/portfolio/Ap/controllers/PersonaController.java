@@ -21,26 +21,26 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 
-@RequestMapping("/api/personas")
+@RequestMapping("/personas")
 public class PersonaController {
     
     @Autowired
     private IPersonaService persoServ;
 
   /*List of persona users*/
-    @GetMapping
+    @GetMapping("/list")
     public List<Persona> getPersonas(){
         return persoServ.getPersonas();
     }    
     
     /*one persona user*/
-    @GetMapping("/{id}")
-    public String getPersona(@PathVariable Long id){
-        return "Petition Get a Persona number:" + id;
+    @GetMapping("/id/{id}")
+    public Persona getPersonaById(@PathVariable Long id){
+       return persoServ.getPersonaById(id);
     }
     
     /*update persona*/
-    @PutMapping
+    @PutMapping("/update")
     public ResponseEntity<List<Persona>> editPersona(@RequestBody Persona per){
         persoServ.editPersona(per);
          return new ResponseEntity(HttpStatus.OK);

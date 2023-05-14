@@ -19,14 +19,17 @@ public class HardSkill {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    @Column(length=50, nullable = false)
+    @Column(length=50)
     private String name;
     
-    @Column( nullable = false)
+    @Column
     private int percentage;
     
+     /*constructor default*/
+    public HardSkill() {
+    }
+    
     /*constructor*/
-
     public HardSkill(Long id, String name, int percentage) {
         this.id = id;
         this.name = name;
@@ -35,7 +38,6 @@ public class HardSkill {
     
     
     /*getter and setter*/
-
     public Long getId() {
         return id;
     }

@@ -17,7 +17,7 @@ public interface IPersonaService {
     public List<Persona> getPersonas();
     
     /*get one persona*/
-    public Persona getPersona(Long id);
+    public Persona getPersonaById(Long id);
         
     /*update*/
     public void editPersona(Persona per);

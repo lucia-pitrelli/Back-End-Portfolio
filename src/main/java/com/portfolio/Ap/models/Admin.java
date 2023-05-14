@@ -19,14 +19,18 @@ public class Admin {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    @Column(length=60, nullable = false, unique = true)
+    @Column(length=60, unique = true)
     private String email; 
 
-    @Column(length=20, nullable = false)
+    @Column(length=20)
     private String password; 
     
+    
+     /*default constructor*/
+        public Admin() {
+    }
+    
 /*constructor*/
-
     public Admin(Long id, String email, String password) {
         this.id = id;
         this.email = email;
@@ -35,7 +39,6 @@ public class Admin {
     
     
 /*setter and getter*/
-
     public Long getId() {
         return id;
     }
