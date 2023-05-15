@@ -22,10 +22,10 @@ public class Project {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    @Column(length=45, unique = true)
+    @Column(unique = true)
     private String name;
     
-    @Column(length=55)
+    @Column
     private String details;
     
     @Column

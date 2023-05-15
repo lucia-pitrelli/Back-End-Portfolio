@@ -19,13 +19,13 @@ public class Persona {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    @Column(length=50, unique = true)
+    @Column(unique = true)
     private String fullname; 
 
-    @Column(length=50)
+    @Column
     private String position; 
     
-    @Column(length=50)
+    @Column
     private String ubication; 
     
     /*defualt constructor*/

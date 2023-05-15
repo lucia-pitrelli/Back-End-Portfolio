@@ -19,7 +19,7 @@ public class AboutMe {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    @Column(length=200)
+    @Column
     private String text; 
 
     

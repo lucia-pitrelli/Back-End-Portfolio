@@ -19,14 +19,14 @@ public class Admin {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    @Column(length=60, unique = true)
+    @Column(unique = true)
     private String email; 
 
-    @Column(length=20)
+    @Column
     private String password; 
     
     
-     /*default constructor*/
+/*default constructor*/
         public Admin() {
     }
     

@@ -19,7 +19,7 @@ public class HardSkill {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    @Column(length=50)
+    @Column
     private String name;
     
     @Column
