@@ -47,12 +47,12 @@ private IEducationService eduServ;
     
     /*update an education*/
      @PutMapping("/update")
-        public ResponseEntity<List<Education>> editEducation(@RequestBody Education edu){
+     public ResponseEntity<List<Education>> editEducation(@RequestBody Education edu){
          eduServ.editEducation(edu);
          return new ResponseEntity(HttpStatus.OK);
     }
 
-  /*create a new education*/             
+   /*create a new education*/             
     @PostMapping("/create")
     public void createEducation(@RequestBody Education edu){
         eduServ.createEducation(edu);
