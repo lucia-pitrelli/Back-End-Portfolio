@@ -4,10 +4,25 @@
  */
 package com.portfolio.Ap.service;
 
-/**
- *
- * @author lulip
- */
+import com.portfolio.Ap.models.HardSkill;
+
+import java.util.List;
+
 public interface IHardSkillService {
+    
+    /* get list */
+    public List<HardSkill> getHardSkills();
+    
+    /*get one */
+    public HardSkill getHardSkillById(Long id);
+        
+    /*update*/
+    public void editHardSkill(HardSkill har);
+     
+    /*create */
+    public void createHardSkill(HardSkill har);
+    
+    /*delete*/
+    public void deleteHardSkill(Long id);
     
 }

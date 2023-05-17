@@ -5,6 +5,15 @@
 package com.portfolio.Ap.controllers;
 
 
+import com.portfolio.Ap.models.Project;
+import com.portfolio.Ap.service.IProjectService;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,43 +21,47 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/api/projects")
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("/projects")
 public class ProjectController {
     
-
-
+@Autowired
+private IProjectService proServ;
     
-    /*obtener listado de proyectos*/
-    @GetMapping
-    public String getListProjects(){
-        return "Peticion Get the Projects";
+    /*list*/
+    @GetMapping("/list")
+    @ResponseBody
+    public List<Project> getProjects(){
+        return proServ.getProjects();
     }    
     
-    /*obtener un proyecto*/
-    @GetMapping("/{id}")
-    public String getProject(@PathVariable Long id){
-        return "Peticion Get a Project number:" + id;
+    /*get one*/
+    @GetMapping("/id/{id}")
+    public Project getProjectById(@PathVariable Long id){
+        return proServ.getProjectById(id);
     }
     
-    /*alta de un proyecto*/
-    @PostMapping
-    public String postProjects(@RequestBody String body){
-        return "Peticion Post:" + body;
+    /*create*/
+    @PostMapping("/create")
+    public void createProject(@RequestBody Project pro){
+        proServ.createProject(pro);
     }  
     
-    /*modificacion de un proyecto*/
-    @PutMapping("/{id}")
-        public String changeProject(@PathVariable Long id){
-        return "Peticion Put a Project number:" + id;
+    /*update*/
+    @PutMapping("/update")
+        public ResponseEntity<List<Project>> editProject(@RequestBody Project pro){
+         proServ.editProject(pro);
+          return new ResponseEntity(HttpStatus.OK);
     }
     
-    /*baja de un proyecto*/
-    @DeleteMapping("/{id}")
-    public String deleteProject(@PathVariable Long id){
-        return "Do you want to delete a Project number:" + id;
+    /*delete*/
+    @DeleteMapping("/delete/{id}")
+    public void deleteProject(@PathVariable Long id){
+        proServ.deleteProject(id);
     }
 }

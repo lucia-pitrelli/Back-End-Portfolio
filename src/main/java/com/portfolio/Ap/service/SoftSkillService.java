@@ -4,10 +4,30 @@
  */
 package com.portfolio.Ap.service;
 
-/**
- *
- * @author lulip
- */
-public class SoftSkillService {
+import com.portfolio.Ap.models.SoftSkill;
+import com.portfolio.Ap.repository.SoftSkillRepository;
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class SoftSkillService implements ISoftSkillService{
+    
+    @Autowired
+    public SoftSkillRepository sofRepo;
+
+    @Override
+    public List<SoftSkill> getSoftSkills() {
+        return sofRepo.findAll();
+    }
+
+    @Override
+    public SoftSkill getSoftSkillById(Long id) {
+         return sofRepo.findById(id).orElse(null);
+    }
+
+    @Override
+    public void editSoftSkill(SoftSkill sof) {
+          sofRepo.save(sof);
+    }
     
 }

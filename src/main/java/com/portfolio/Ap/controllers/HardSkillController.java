@@ -4,6 +4,14 @@
  */
 package com.portfolio.Ap.controllers;
 
+import com.portfolio.Ap.models.HardSkill;
+import com.portfolio.Ap.service.IHardSkillService;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,36 +20,46 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/hardskills")
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("/hardskills")
 public class HardSkillController {
     
+    @Autowired
+    private IHardSkillService harServ;
 
-    
-    @GetMapping
-    public String getHardSkills(){
-        return "Petition Get a list of Hard Skills";
+    /*list*/
+    @GetMapping("/list")
+    @ResponseBody
+    public List<HardSkill> getHardSkills(){
+        return harServ.getHardSkills();
     }    
     
-    @GetMapping("/{id}")
-    public String getHardSkill(@PathVariable Long id){
-        return "Petition Get a Hard Skill number:" + id;
+    /*get one*/
+    @GetMapping("/id/{id}")
+    public HardSkill getHardSkillById(@PathVariable Long id){
+        return harServ.getHardSkillById(id);
     }
     
-    @PostMapping
-    public String postHardSkill(@RequestBody String body){
-        return "Petition Post:" + body;
+    /*create*/
+    @PostMapping("/create")
+    public void createHardSkill(@RequestBody HardSkill har){
+        harServ.createHardSkill(har);
     }  
     
-    @PutMapping("/{id}")
-        public String changeHardSkill(@PathVariable Long id){
-        return "Petition Put a Hard Skill number:" + id;
+    /*update*/
+    @PutMapping("/update")
+    public ResponseEntity<List<HardSkill>> editHardSkill(@RequestBody HardSkill har){
+        harServ.editHardSkill(har);
+        return new ResponseEntity(HttpStatus.OK);
     }
     
-    @DeleteMapping("/{id}")
-    public String deleteHardSkill(@PathVariable Long id){
-        return "Do you want to delete a Hard Skills number:" + id;
+    /*delete*/
+    @DeleteMapping("/delete/{id}")
+    public void deleteHardSkill(@PathVariable Long id){
+        harServ.deleteHardSkill(id);
     }
 }

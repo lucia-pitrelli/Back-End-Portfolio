@@ -6,16 +6,21 @@
 
 This project was generated with:
 
-- Apache NetBeans v.17
-- MySql Workbench 8.0
-- Java
-- Sql 
-- Spring Boot 
+- Data Base: MySql Workbench v8
+- SQL
+- JAVA v.17
+- Framework: Spring Boot 
+
+
+## Deploy
+
+ Clever Cloud for Data Base MYSQL and Render for Back End Spring Boot
 
 
 ## Creator:
 
 Lucia B. Pitrelli
+
 
 ## How to download project files:
 

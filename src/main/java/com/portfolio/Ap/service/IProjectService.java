@@ -4,10 +4,24 @@
  */
 package com.portfolio.Ap.service;
 
-/**
- *
- * @author lulip
- */
+import com.portfolio.Ap.models.Project;
+import java.util.List;
+
 public interface IProjectService {
+   
+    /* get list */
+    public List<Project> getProjects();
+    
+    /*get one */
+    public Project getProjectById(Long id);
+        
+    /*update */
+    public void editProject(Project pro);
+     
+    /*create */
+    public void createProject(Project pro);
+    
+    /*delete */
+    public void deleteProject(Long id);
     
 }

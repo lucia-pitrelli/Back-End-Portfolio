@@ -4,7 +4,17 @@
  */
 package com.portfolio.Ap.service;
 
+import com.portfolio.Ap.models.AboutMe;
+import java.util.List;
+
 
 public interface IAboutMeService {
+    /* get list */
+    public List<AboutMe> getAbouts();
     
+    /*get one */
+    public AboutMe getAboutMeById(Long id);
+        
+    /*update*/
+    public void editAboutMe(AboutMe abo);
 }

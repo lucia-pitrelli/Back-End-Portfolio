@@ -5,34 +5,50 @@
 package com.portfolio.Ap.controllers;
 
 
+import com.portfolio.Ap.models.SoftSkill;
+import com.portfolio.Ap.service.ISoftSkillService;
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/softskills")
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("/softskills")
 public class SoftSkillController {
     
+@Autowired
+private ISoftSkillService sofServ;
 
-
-    
-    /*tengo una sola id*/
-    @GetMapping
-    public String getSoftSkills(){
-        return "Petition Get a list of Soft Skills";
+    /*list*/
+    @GetMapping("/list")
+    @ResponseBody
+    public List<SoftSkill> getSoftSkills(){
+        return sofServ.getSoftSkills();
     }    
     
-    @GetMapping("/{id}")
-    public String getSoftSkill(@PathVariable Long id){
-        return "Petition Get a Soft Skill number:" + id;
+    /*get one*/
+    @GetMapping("/id/{id}")
+    public SoftSkill getSoftSkillById(@PathVariable Long id){
+        return sofServ.getSoftSkillById(id);
     }
      
-    
-    @PutMapping("/{id}")
-    public String changeSoftSkill(@PathVariable Long id){
-        return "Petition Put a Soft Skills number:" + id;
+    /*update*/
+    @PutMapping("/update")
+     public ResponseEntity<List<SoftSkill>> editSoftSkill(@RequestBody SoftSkill sof){
+         sofServ.editSoftSkill(sof);
+         return new ResponseEntity(HttpStatus.OK);
     }
     
 }

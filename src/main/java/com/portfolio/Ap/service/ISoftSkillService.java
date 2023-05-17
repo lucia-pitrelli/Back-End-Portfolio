@@ -4,10 +4,18 @@
  */
 package com.portfolio.Ap.service;
 
-/**
- *
- * @author lulip
- */
+import com.portfolio.Ap.models.SoftSkill;
+
+import java.util.List;
+
 public interface ISoftSkillService {
     
+    /* get list */
+    public List<SoftSkill> getSoftSkills();
+    
+    /*get one*/
+    public SoftSkill getSoftSkillById(Long id);
+        
+    /*update */
+    public void editSoftSkill(SoftSkill sof);    
 }
